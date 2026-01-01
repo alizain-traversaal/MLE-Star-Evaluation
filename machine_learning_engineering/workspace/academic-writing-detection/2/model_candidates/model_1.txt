@@ -1,0 +1,35 @@
+## Model name
+GPTZero
+
+## Example Python code
+GPTZero is a popular AI text detector that uses a deep learning model and heuristic methods, such as analyzing writing consistency and internet text search, to identify AI-generated content. While specific code implementation details aren't readily available, its use can be demonstrated conceptually.  Access to GPTZero is available through their website.
+
+```python
+# This is a conceptual example. Actual API usage may differ.
+import requests
+
+text = "This is an example text to be checked by GPTZero."
+
+# Replace with actual API endpoint and key
+api_url = "https://api.gptzero.me/v2/detect"
+api_key = "YOUR_API_KEY"
+
+headers = {
+    "X-API-KEY": api_key,
+    "Content-Type": "application/json"
+}
+
+data = {
+    "document": {
+        "content": text
+    }
+}
+
+response = requests.post(api_url, headers=headers, json=data)
+
+if response.status_code == 200:
+    result = response.json()
+    print(result)
+else:
+    print(f"Error: {response.status_code}, {response.text}")
+```

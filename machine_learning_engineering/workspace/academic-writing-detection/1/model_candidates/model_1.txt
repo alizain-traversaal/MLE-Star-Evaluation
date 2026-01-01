@@ -1,0 +1,47 @@
+## Model name
+RoBERTa
+
+## Example Python code
+from transformers import RobertaTokenizer, RobertaForSequenceClassification
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+import torch
+
+# Load the tokenizer and model
+model_name = 'roberta-base'
+tokenizer = RobertaTokenizer.from_pretrained(model_name)
+model = RobertaForSequenceClassification.from_pretrained(model_name, num_labels=2) # Assuming binary classification
+
+# Prepare your data (texts and labels)
+texts = ['This text is human-written.', 'This text is AI-generated.']
+labels = [0, 1]  # 0: human, 1: AI
+
+# Tokenize the texts
+encodings = tokenizer(texts, truncation=True, padding=True)
+
+# Convert to PyTorch tensors
+input_ids = torch.tensor(encodings['input_ids'])
+attention_mask = torch.tensor(encodings['attention_mask'])
+labels = torch.tensor(labels)
+
+# Split data into training and testing sets
+input_ids_train, input_ids_test, labels_train, labels_test = train_test_split(input_ids, labels, test_size=0.2)
+attention_mask_train, attention_mask_test, _, _ = train_test_split(attention_mask, labels, test_size=0.2)
+
+# Training loop (simplified)
+optimizer = torch.optim.AdamW(model.parameters(), lr=5e-5)
+model.train()
+for epoch in range(3):
+    optimizer.zero_grad()
+    outputs = model(input_ids_train, attention_mask=attention_mask_train, labels=labels_train)
+    loss = outputs.loss
+    loss.backward()
+    optimizer.step()
+
+# Evaluation
+model.eval()
+with torch.no_grad():
+    outputs = model(input_ids_test, attention_mask=attention_mask_test)
+    predictions = torch.argmax(outputs.logits, dim=1)
+    accuracy = accuracy_score(labels_test, predictions)
+    print(f'Accuracy: {accuracy}')

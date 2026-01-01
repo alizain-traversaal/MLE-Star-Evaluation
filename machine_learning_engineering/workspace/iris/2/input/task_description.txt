@@ -1,0 +1,26 @@
+# Task
+
+Classify iris flowers into three species (setosa, versicolor, virginica) based on sepal and petal measurements
+
+# Metric
+
+accuracy
+
+# Submission Format
+
+```
+class
+0
+1
+0
+etc.
+```
+
+# Dataset
+
+train.csv
+Contains features and class target variable.
+
+test.csv
+Contains features only (no target variable).
+Same feature columns as train.csv.

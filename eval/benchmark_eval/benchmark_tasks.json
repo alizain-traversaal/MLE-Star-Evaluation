@@ -1,0 +1,149 @@
+[
+  {
+    "task_name": "california-housing-prices",
+    "task_type": "Tabular Regression",
+    "metric": "root_mean_squared_error",
+    "lower_is_better": true,
+    "description": "Predict the median house value in California districts",
+    "queries": [
+      {
+        "query": "describe the task that you have",
+        "expected_tool_use": [],
+        "expected_intermediate_agent_responses": [],
+        "reference": "The task I have is the California Housing Task. This task involves predicting the median house value in California districts, given various features about those districts. It's a regression problem where the goal is to build a model that can accurately estimate house prices based on factors like population, median income, and housing age within a district."
+      },
+      {
+        "query": "execute the california housing prices task",
+        "expected_tool_use": [],
+        "expected_intermediate_agent_responses": [],
+        "reference": "Tabular regression to predict `median_house_value` using `root_mean_squared_error` metric."
+      }
+    ]
+  },
+  {
+    "task_name": "wine-quality",
+    "task_type": "Tabular Regression",
+    "metric": "root_mean_squared_error",
+    "lower_is_better": true,
+    "description": "Predict wine quality based on chemical properties",
+    "queries": [
+      {
+        "query": "describe the task that you have",
+        "expected_tool_use": [],
+        "expected_intermediate_agent_responses": [],
+        "reference": "The task I have is the Wine Quality Task. This task involves predicting the quality of wine based on various chemical properties such as fixed acidity, volatile acidity, citric acid, residual sugar, chlorides, and other features. It's a regression problem where the goal is to build a model that can accurately estimate wine quality scores."
+      },
+      {
+        "query": "execute the wine-quality task",
+        "expected_tool_use": [],
+        "expected_intermediate_agent_responses": [],
+        "reference": "Tabular regression to predict `quality` using `root_mean_squared_error` metric."
+      }
+    ]
+  },
+  {
+    "task_name": "credit-card-fraud",
+    "task_type": "Tabular Classification",
+    "metric": "roc_auc_score",
+    "lower_is_better": false,
+    "description": "Predict credit card fraud transactions. Binary classification task to identify fraudulent transactions.",
+    "queries": [
+      {
+        "query": "describe the task that you have",
+        "expected_tool_use": [],
+        "expected_intermediate_agent_responses": [],
+        "reference": "The task I have is the Credit Card Fraud Task. This task involves predicting fraudulent credit card transactions based on various anonymized features (V1-V28 from PCA transformation), Time, and Amount. It's a binary classification problem where the goal is to build a model that can accurately identify fraudulent transactions (Class=1) from normal transactions (Class=0). This is a highly imbalanced dataset."
+      },
+      {
+        "query": "execute the credit-card-fraud task",
+        "expected_tool_use": [],
+        "expected_intermediate_agent_responses": [],
+        "reference": "Tabular classification to predict `Class` using `roc_auc_score` metric."
+      }
+    ]
+  },
+  {
+    "task_name": "breast-cancer-wisconsin",
+    "task_type": "Tabular Classification",
+    "metric": "roc_auc_score",
+    "lower_is_better": false,
+    "description": "Predict breast cancer (malignant or benign) based on cell characteristics",
+    "queries": [
+      {
+        "query": "describe the task that you have",
+        "expected_tool_use": [],
+        "expected_intermediate_agent_responses": [],
+        "reference": "The task I have is the Breast Cancer Wisconsin Task. Predict breast cancer (malignant or benign) based on cell characteristics. It's a binary classification problem where the goal is to build a model that can accurately predict the target class using roc_auc_score metric."
+      },
+      {
+        "query": "execute the breast-cancer-wisconsin task",
+        "expected_tool_use": [],
+        "expected_intermediate_agent_responses": [],
+        "reference": "Tabular Classification to predict `Class` using `roc_auc_score` metric."
+      }
+    ]
+  },
+  {
+    "task_name": "iris",
+    "task_type": "Tabular Classification",
+    "metric": "accuracy",
+    "lower_is_better": false,
+    "description": "Classify iris flowers into three species (setosa, versicolor, virginica) based on sepal and petal measurements",
+    "queries": [
+      {
+        "query": "describe the task that you have",
+        "expected_tool_use": [],
+        "expected_intermediate_agent_responses": [],
+        "reference": "The task I have is the Iris Task. Classify iris flowers into three species (setosa, versicolor, virginica) based on sepal and petal measurements. It's a binary classification problem where the goal is to build a model that can accurately predict the target class using accuracy metric."
+      },
+      {
+        "query": "execute the iris task",
+        "expected_tool_use": [],
+        "expected_intermediate_agent_responses": [],
+        "reference": "Tabular Classification to predict `class` using `accuracy` metric."
+      }
+    ]
+  },
+  {
+    "task_name": "academic-writing-detection",
+    "task_type": "Text Classification",
+    "metric": "accuracy",
+    "lower_is_better": false,
+    "description": "Detect whether academic writing text is generated by a human or machine (AI). Binary classification task to identify AI-generated academic text.",
+    "queries": [
+      {
+        "query": "describe the task that you have",
+        "expected_tool_use": [],
+        "expected_intermediate_agent_responses": [],
+        "reference": "The task I have is the Academic Writing Detection Task. This task involves detecting whether academic writing text is generated by a human or machine (AI). It's a binary classification problem where the goal is to build a model that can accurately identify AI-generated academic text versus human-written text using accuracy metric."
+      },
+      {
+        "query": "execute the academic-writing-detection task",
+        "expected_tool_use": [],
+        "expected_intermediate_agent_responses": [],
+        "reference": "Text classification to predict `label` (human or machine) using `accuracy` metric."
+      }
+    ]
+  },
+  {
+    "task_name": "news-article-detection",
+    "task_type": "Text Classification",
+    "metric": "accuracy",
+    "lower_is_better": false,
+    "description": "Detect whether news article text is generated by a human or machine (AI). Binary classification task to identify AI-generated news articles.",
+    "queries": [
+      {
+        "query": "describe the task that you have",
+        "expected_tool_use": [],
+        "expected_intermediate_agent_responses": [],
+        "reference": "The task I have is the News Article Detection Task. This task involves detecting whether news article text is generated by a human or machine (AI). It's a binary classification problem where the goal is to build a model that can accurately identify AI-generated news articles versus human-written articles using accuracy metric."
+      },
+      {
+        "query": "execute the news-article-detection task",
+        "expected_tool_use": [],
+        "expected_intermediate_agent_responses": [],
+        "reference": "Text classification to predict `label` (human or machine) using `accuracy` metric."
+      }
+    ]
+  }
+]

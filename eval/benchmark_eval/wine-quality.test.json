@@ -1,0 +1,14 @@
+[
+  {
+    "query": "describe the task that you have",
+    "expected_tool_use": [],
+    "expected_intermediate_agent_responses": [],
+    "reference": "The task I have is the Wine Quality Task. This task involves predicting the quality of wine based on various chemical properties such as fixed acidity, volatile acidity, citric acid, residual sugar, chlorides, and other features. It's a regression problem where the goal is to build a model that can accurately estimate wine quality scores."
+  },
+  {
+    "query": "execute the wine-quality task",
+    "expected_tool_use": [],
+    "expected_intermediate_agent_responses": [],
+    "reference": "Tabular regression to predict `quality` using `root_mean_squared_error` metric."
+  }
+]

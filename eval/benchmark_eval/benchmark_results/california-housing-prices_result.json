@@ -1,0 +1,7 @@
+{
+  "task_name": "california-housing-prices",
+  "status": "failed",
+  "elapsed_time": 933.7503299713135,
+  "timestamp": "2025-12-29T19:31:50.717492",
+  "error": "Following are all the test failures.\ntool_trajectory_avg_score for None Failed. Expected 0.6, but got 0.5.\nresponse_match_score for None Failed. Expected 0.4, but got 0.2677133655394525."
+}

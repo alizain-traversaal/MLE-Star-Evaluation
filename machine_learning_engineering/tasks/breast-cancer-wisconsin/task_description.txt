@@ -1,0 +1,26 @@
+# Task
+
+Predict breast cancer (malignant or benign) based on cell characteristics
+
+# Metric
+
+roc_auc_score
+
+# Submission Format
+
+```
+Class
+0
+1
+0
+etc.
+```
+
+# Dataset
+
+train.csv
+Contains features and Class target variable.
+
+test.csv
+Contains features only (no target variable).
+Same feature columns as train.csv.

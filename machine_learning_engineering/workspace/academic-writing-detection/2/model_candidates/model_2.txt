@@ -1,0 +1,21 @@
+## Model name
+BERT-based model
+
+## Example Python code
+BERT (Bidirectional Encoder Representations from Transformers) is a transformer-based model that can be fine-tuned for text classification tasks. Studies show BERT achieves high accuracy in detecting AI-generated content.
+
+```python
+from transformers import pipeline
+
+# Load a pre-trained BERT model fine-tuned for AI-generated text detection
+classifier = pipeline("text-classification", model="roberta-base-openai-detector")
+
+text = "This is an example text to be classified."
+
+prediction = classifier(text)
+
+print(prediction)
+# Expected output: 
+# [{'label': 'AI-GENERATED', 'score': 0.99}] or [{'label': 'Human', 'score': 0.01}]
+
+```

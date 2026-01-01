@@ -1,0 +1,9 @@
+.adk
+.cursor
+.venv
+.pytest_cache
+.env
+machine_learning_engineering/pytest_cache
+machine_learning_engineering/.adk
+eval/__pycache__
+install_vcredist.ps1

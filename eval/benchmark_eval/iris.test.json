@@ -1,0 +1,14 @@
+[
+  {
+    "query": "describe the task that you have",
+    "expected_tool_use": [],
+    "expected_intermediate_agent_responses": [],
+    "reference": "The task I have is the Iris Task. Classify iris flowers into three species (setosa, versicolor, virginica) based on sepal and petal measurements. It's a binary classification problem where the goal is to build a model that can accurately predict the target class using accuracy metric."
+  },
+  {
+    "query": "execute the iris task",
+    "expected_tool_use": [],
+    "expected_intermediate_agent_responses": [],
+    "reference": "Tabular Classification to predict `class` using `accuracy` metric."
+  }
+]

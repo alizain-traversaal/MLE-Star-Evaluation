@@ -1,0 +1,41 @@
+
+import lightgbm as lgb
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
+import pandas as pd
+import numpy as np
+
+# Load the data
+data = pd.read_csv('./input/train.csv')
+X = data.drop(['quality'], axis=1)
+y = data['quality']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize LightGBM regressor
+lgbm = lgb.LGBMRegressor(objective='regression', # Specify regression task
+                            n_estimators=1000,  # Number of boosting rounds
+                            learning_rate=0.05, # Step size shrinkage
+                            max_depth=5,        # Maximum depth of a tree
+                            num_leaves=31,      # Maximum number of leaves in one tree
+                            min_child_samples=20, # Minimum number of data needed in a child
+                            subsample=0.8,      # Subsample ratio of the training instance
+                            colsample_bytree=0.8, # Subsample ratio of columns when constructing each tree
+                            reg_alpha=0.001,      # L1 regularization term on weights
+                            reg_lambda=0.001,     # L2 regularization term on weights
+                            random_state=42,    # Random seed
+                            n_jobs=-1)          # Use all available cores
+
+# Train the model
+lgbm.fit(X_train, y_train)
+
+# Make predictions
+predictions = lgbm.predict(X_test)
+
+# Evaluate the model
+mse = mean_squared_error(y_test, predictions)
+rmse = np.sqrt(mse)
+print(f'Root Mean Squared Error: {rmse}')
+
+print("Final Validation Performance: {}".format(rmse))

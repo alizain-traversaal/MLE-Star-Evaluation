@@ -1,0 +1,7 @@
+{
+  "task_name": "wine-quality",
+  "status": "failed",
+  "elapsed_time": 210.47813534736633,
+  "timestamp": "2025-12-29T18:54:55.820600",
+  "error": "Following are all the test failures.\ntool_trajectory_avg_score for None Failed. Expected 0.6, but got 0.5.\nresponse_match_score for None Failed. Expected 0.4, but got 0.16626178213973375."
+}

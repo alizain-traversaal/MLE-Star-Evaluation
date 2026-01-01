@@ -1,0 +1,21 @@
+{
+  "summary": {
+    "total_tasks": 1,
+    "completed": 1,
+    "failed": 0,
+    "errors": 0,
+    "success_rate": "100.0%",
+    "total_time_seconds": 1344.1040449142456,
+    "total_time_minutes": 22.40173408190409,
+    "average_time_per_task": 1344.1040449142456,
+    "timestamp": "2026-01-01T09:38:35.831356"
+  },
+  "results": [
+    {
+      "task_name": "breast-cancer-wisconsin",
+      "status": "completed",
+      "elapsed_time": 1344.1040449142456,
+      "timestamp": "2026-01-01T09:38:35.830059"
+    }
+  ]
+}

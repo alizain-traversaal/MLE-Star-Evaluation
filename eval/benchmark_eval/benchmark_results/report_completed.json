@@ -1,0 +1,21 @@
+{
+    "summary": {
+      "total_tasks": 1,
+      "completed": 1,
+      "failed": 0,
+      "errors": 0,
+      "success_rate": "100.0%",
+      "total_time_seconds": 1363.1775288581848,
+      "total_time_minutes": 22.719625480969746,
+      "average_time_per_task": 1363.1775288581848,
+      "timestamp": "2025-12-31T18:08:40.336204"
+    },
+    "results": [
+      {
+        "task_name": "academic-writing-detection",
+        "status": "completed",
+        "elapsed_time": 1363.1775288581848,
+        "timestamp": "2025-12-31T18:08:40.335296"
+      }
+    ]
+  }

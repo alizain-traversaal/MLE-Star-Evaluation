@@ -1,0 +1,26 @@
+# Task
+
+Predict the wine quality.
+
+# Metric
+
+root_mean_squared_error
+
+# Submission Format
+```
+quality
+5.0
+6.0
+7.0
+etc.
+```
+
+# Dataset
+
+train.csv
+Contains wine features and quality target variable.
+Features include: fixed acidity, volatile acidity, citric acid, residual sugar, chlorides, ...
+
+test.csv
+Contains wine features only (no target variable).
+Same feature columns as train.csv.

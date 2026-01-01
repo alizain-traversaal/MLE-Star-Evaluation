@@ -1,0 +1,7 @@
+{
+  "task_name": "iris",
+  "status": "failed",
+  "elapsed_time": 484.8063907623291,
+  "timestamp": "2025-12-31T15:52:23.130017",
+  "error": "object of type 'NoneType' has no len()"
+}

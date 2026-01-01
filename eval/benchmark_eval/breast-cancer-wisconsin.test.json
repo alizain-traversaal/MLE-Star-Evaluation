@@ -1,0 +1,14 @@
+[
+  {
+    "query": "describe the task that you have",
+    "expected_tool_use": [],
+    "expected_intermediate_agent_responses": [],
+    "reference": "The task I have is the Breast Cancer Wisconsin Task. Predict breast cancer (malignant or benign) based on cell characteristics. It's a binary classification problem where the goal is to build a model that can accurately predict the target class using roc_auc_score metric."
+  },
+  {
+    "query": "execute the breast-cancer-wisconsin task",
+    "expected_tool_use": [],
+    "expected_intermediate_agent_responses": [],
+    "reference": "Tabular Classification to predict `Class` using `roc_auc_score` metric."
+  }
+]

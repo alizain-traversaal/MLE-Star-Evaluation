@@ -1,0 +1,52 @@
+## Model name
+CatBoost
+
+## Example Python code
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from catboost import CatBoostClassifier
+from sklearn.metrics import roc_auc_score
+
+# Load data
+df = pd.read_csv("your_train.csv") # Replace "your_train.csv" with the actual path to your training data
+
+# Preprocessing
+X = df.drop("Class", axis=1)  # Assuming 'Class' is the target column
+y = df["Class"]
+
+# Scale the features
+scaler = StandardScaler()
+X = scaler.fit_transform(X)
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize CatBoostClassifier
+model = CatBoostClassifier(iterations=100,
+                           learning_rate=0.05,
+                           depth=6,
+                           loss_function='Logloss',
+                           eval_metric='AUC',
+                           random_seed=42,
+                           verbose=0) # Suppress verbose output
+
+# Train the model
+model.fit(X_train, y_train, eval_set=(X_test, y_test), early_stopping_rounds=10, verbose=0)
+
+# Make predictions on the test set
+y_pred = model.predict_proba(X_test)[:, 1]
+
+# Evaluate the model
+roc_auc = roc_auc_score(y_test, y_pred)
+print(f"ROC AUC: {roc_auc}")
+
+# Prepare submission (assuming test.csv has the same features as train.csv)
+test_df = pd.read_csv("your_test.csv") # Replace "your_test.csv" with the actual path to your test data
+X_test_submission = test_df.drop("Class", axis=1) #drop Class for test data.
+X_test_submission = scaler.transform(X_test_submission) # Scale the test features using the same scaler
+
+y_pred_submission = model.predict(X_test_submission)
+
+submission_df = pd.DataFrame({'Class': y_pred_submission})
+submission_df.to_csv("submission.csv", index=False)

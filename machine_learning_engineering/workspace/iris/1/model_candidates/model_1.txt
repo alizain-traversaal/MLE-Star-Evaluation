@@ -1,0 +1,30 @@
+## Model name
+LightGBM Classifier
+
+## Example Python code
+import lightgbm as lgb
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
+# Load the Iris dataset
+iris = load_iris()
+X = iris.data
+y = iris.target
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize LightGBM Classifier
+# 'objective': 'multiclass' and 'num_class' are set for multi-class classification
+model = lgb.LGBMClassifier(objective='multiclass', num_class=len(iris.target_names), random_state=42)
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = model.predict(X_test)
+
+# Evaluate accuracy
+accuracy = accuracy_score(y_test, y_pred)
+print(f"LightGBM Classifier Accuracy: {accuracy:.4f}")
