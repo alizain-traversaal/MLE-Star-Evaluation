@@ -19,6 +19,28 @@ The benchmark evaluation suite allows you to:
 
 ## Running Evaluations
 
+## Quick Start
+
+### Option 1: Using pytest (Recommended for CI/CD)
+
+```bash
+# Run all benchmarks
+pytest eval/benchmark_eval/test_benchmark_eval.py::test_all_benchmarks -v
+
+# Run specific task
+pytest eval/benchmark_eval/test_benchmark_eval.py::test_benchmark_task -k "california-housing-prices" -v
+```
+
+### Option 2: Using standalone runner (Recommended for interactive use)
+
+```bash
+# Run all configured benchmarks
+python eval/benchmark_eval/run_benchmark_eval.py
+
+# Run specific tasks with custom settings
+python eval/benchmark_eval/run_benchmark_eval.py --tasks california-housing-prices --timeout 3600
+```
+
 ### Run a Single Benchmark Task
 
 ```bash
@@ -75,24 +97,6 @@ To add a new benchmark task:
    ```bash
    pytest eval/benchmark_eval/test_benchmark_eval.py -k "your-task-name"
    ```
-
-## MLE-Bench-Lite Integration
-
-The MLE-Bench-Lite benchmark contains 33 machine learning tasks from Kaggle competitions. To set up MLE-Bench-Lite tasks:
-
-1. **Install MLE-Bench (if needed):**
-   ```bash
-   pip install mle-bench
-   ```
-
-2. **Use the setup script:**
-   ```bash
-   python eval/benchmark_eval/setup_mle_bench.py --tasks all
-   # Or specify specific tasks:
-   python eval/benchmark_eval/setup_mle_bench.py --tasks task1 task2 task3
-   ```
-
-3. **Add tasks to `benchmark_tasks.json`** following the format above.
 
 ## Evaluation Metrics
 
