@@ -1,0 +1,40 @@
+# Task
+
+Forecast sales (TOTAL_ADJUSTED_QUANTITY) for Jack-in-the-Box for four cumulative evaluation windows:
+- test.csv: First 7 days (2025-10-01 to 2025-10-07)
+
+This is a time series forecasting problem. You need to predict sales quantities for future dates based on historical sales data. Each test file represents a cumulative window, allowing evaluation of forecast accuracy at different time horizons.
+
+# Metric
+
+mean_absolute_percentage_error
+
+
+submission_test.csv (7 predictions for test.csv):
+```
+TOTAL_ADJUSTED_QUANTITY
+45.5
+52.3
+48.7
+51.2
+42.1
+38.9
+44.6
+```
+
+
+# Dataset
+
+train.csv
+Contains historical sales data with columns:
+- BUSINESS_DATE: Date of the sale (YYYY-MM-DD format)
+- TOTAL_ADJUSTED_QUANTITY: Sales quantity for that date
+
+The data contains daily sales from 2024-06-07 to 2025-09-30 (last training date: 2025-09-30).
+
+test.csv
+Contains the first 7 future dates (2025-10-01 to 2025-10-07):
+- BUSINESS_DATE: Future dates starting 1 day after the last training date
+- TOTAL_ADJUSTED_QUANTITY: To be predicted (empty/null)
+
+

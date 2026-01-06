@@ -1,0 +1,21 @@
+## Model name
+ARIMA
+
+## Example Python code
+import pandas as pd
+from statsmodels.tsa.arima.model import ARIMA
+
+# Sample Data (replace with your actual data)
+data = [
+    10, 12, 15, 13, 17
+]
+
+# Fit the ARIMA model
+model = ARIMA(data, order=(5,1,0))
+model_fit = model.fit()
+
+# Make predictions
+predictions = model_fit.predict(start=len(data), end=len(data)+6)
+
+# Print predictions
+print(predictions)

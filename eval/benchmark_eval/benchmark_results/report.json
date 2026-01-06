@@ -5,17 +5,17 @@
     "failed": 0,
     "errors": 0,
     "success_rate": "100.0%",
-    "total_time_seconds": 1344.1040449142456,
-    "total_time_minutes": 22.40173408190409,
-    "average_time_per_task": 1344.1040449142456,
-    "timestamp": "2026-01-01T09:38:35.831356"
+    "total_time_seconds": 875.3684575557709,
+    "total_time_minutes": 14.589474292596181,
+    "average_time_per_task": 875.3684575557709,
+    "timestamp": "2026-01-06T18:00:08.427325"
   },
   "results": [
     {
-      "task_name": "breast-cancer-wisconsin",
+      "task_name": "jack-in-the-box",
       "status": "completed",
-      "elapsed_time": 1344.1040449142456,
-      "timestamp": "2026-01-01T09:38:35.830059"
+      "elapsed_time": 875.3684575557709,
+      "timestamp": "2026-01-06T18:00:08.425752"
     }
   ]
 }

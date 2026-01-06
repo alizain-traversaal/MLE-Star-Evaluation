@@ -1,0 +1,22 @@
+## Model name
+ARIMA (AutoRegressive Integrated Moving Average)
+
+## Example Python code
+import pandas as pd
+from statsmodels.tsa.arima.model import ARIMA
+from pmdarima import auto_arima
+
+# Example: Monthly retail sales data
+data = pd.read_csv("retail_sales.csv", parse_dates=["Month"], index_col="Month")
+
+# Auto-select best (p,d,q) parameters
+auto_model = auto_arima(data["Sales"], seasonal=False, trace=True)
+print(auto_model.summary())
+
+# Fit final ARIMA model
+model = ARIMA(data["Sales"], order=auto_model.order)
+fit = model.fit()
+
+# Forecast next 6 months
+forecast = fit.forecast(steps=6)
+print(forecast)

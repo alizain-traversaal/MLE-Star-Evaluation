@@ -145,5 +145,26 @@
         "reference": "Text classification to predict `label` (human or machine) using `accuracy` metric."
       }
     ]
+  },
+  {
+    "task_name": "jack-in-the-box",
+    "task_type": "Time Series Forecasting",
+    "metric": "mean_absolute_percentage_error",
+    "lower_is_better": true,
+    "description": "Forecast Jack-in-the-Box sales (TOTAL_ADJUSTED_QUANTITY) for four cumulative evaluation windows: 7, 14, 21, and 28 days. Time series forecasting task to predict future sales based on historical daily sales data.",
+    "queries": [
+      {
+        "query": "describe the task that you have",
+        "expected_tool_use": [],
+        "expected_intermediate_agent_responses": [],
+        "reference": "The task I have is the Jack-in-the-Box Sales Forecasting Task. This task involves forecasting sales (TOTAL_ADJUSTED_QUANTITY) for four cumulative evaluation windows: test.csv (first 7 days: 2025-10-01 to 2025-10-07), test2.csv (first 14 days: 2025-10-01 to 2025-10-14), test3.csv (first 21 days: 2025-10-01 to 2025-10-21), and test4.csv (first 28 days: 2025-10-01 to 2025-10-28), based on historical daily sales data from 2024-06-07 to 2025-09-30. It's a time series forecasting problem where the goal is to build a model that can accurately predict future sales quantities by analyzing historical patterns, trends, seasonality, and other time-based features. The evaluation metric is mean_absolute_percentage_error, computed separately for each cumulative window to assess forecast accuracy degradation as the forecast horizon increases."
+      },
+      {
+        "query": "execute the jack-in-the-box task",
+        "expected_tool_use": [],
+        "expected_intermediate_agent_responses": [],
+        "reference": "Time series forecasting to predict `TOTAL_ADJUSTED_QUANTITY` for 4 cumulative test sets (7, 14, 21, 28 days) using `mean_absolute_percentage_error` metric. Generate separate submission files: submission_test.csv (7 predictions), submission_test2.csv (14 predictions), submission_test3.csv (21 predictions), and submission_test4.csv (28 predictions)."
+      }
+    ]
   }
 ]
