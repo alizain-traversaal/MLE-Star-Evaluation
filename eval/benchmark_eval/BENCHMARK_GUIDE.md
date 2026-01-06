@@ -31,41 +31,6 @@ python eval/benchmark_eval/run_benchmark_eval.py --tasks california-housing-pric
 python eval/benchmark_eval/run_benchmark_eval.py --timeout 3600 --runs 3
 ```
 
-## Available Benchmarks
-
-### MLE-Bench-Lite
-
-MLE-Bench-Lite is a curated set of 33 machine learning tasks from Kaggle competitions, covering:
-- Tabular regression tasks
-- Tabular classification tasks
-- Time series forecasting
-- And more
-
-### Setting Up MLE-Bench-Lite Tasks
-
-1. **Install MLE-Bench** (if not already installed):
-   ```bash
-   pip install mle-bench
-   ```
-
-2. **Download tasks using the setup script**:
-   ```bash
-   # Download all available tasks
-   python eval/benchmark_eval/setup_mle_bench.py --tasks all --update-config
-
-   # Download specific tasks
-   python eval/benchmark_eval/setup_mle_bench.py --tasks task1 task2 --update-config
-   ```
-
-3. **Review and customize task descriptions**:
-   - Task data will be in `machine_learning_engineering/tasks/{task_name}/`
-   - Update `task_description.txt` files as needed
-   - Ensure data files (train.csv, test.csv, etc.) are present
-
-4. **Update benchmark configuration**:
-   - Edit `eval/benchmark_eval/benchmark_tasks.json`
-   - Add or modify task configurations with appropriate queries and references
-
 ## Adding Custom Benchmarks
 
 ### Step 1: Prepare Task Data
@@ -152,8 +117,8 @@ Edit `eval/benchmark_eval/test_config.json`:
 ```json
 {
   "criteria": {
-    "tool_trajectory_avg_score": 0.6,
-    "response_match_score": 0.4
+    "tool_trajectory_avg_score": 0.0,
+    "response_match_score": 0.0
   }
 }
 ```
@@ -249,18 +214,4 @@ Running `test_all_benchmarks` or `run_benchmark_eval.py` generates:
 - Check workspace logs in `machine_learning_engineering/workspace/{task_name}/`
 - Review agent state in `final_state.json` files
 - Verify data files are accessible and properly formatted
-
-## Next Steps
-
-- Explore MLE-Bench-Lite for more benchmark tasks
-- Customize evaluation criteria for your use case
-- Add domain-specific benchmarks
-- Compare results across different LLM models
-- Analyze performance patterns across task types
-
-## References
-
-- [MLE-Bench Repository](https://github.com/openai/mle-bench)
-- [MLE-STAR Paper](https://www.arxiv.org/abs/2506.15692)
-- [ADK Documentation](https://cloud.google.com/vertex-ai/generative-ai/docs/agent-development-kit/overview)
 
